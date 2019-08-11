@@ -9,6 +9,8 @@ import UIKit
 private let Log = Logger.get()
 
 final class SearchViewController: ViewController {
+    @IBOutlet weak var searchField: UITextView!
+    @IBOutlet weak var searchButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,5 +22,13 @@ final class SearchViewController: ViewController {
         svc.tabBarItem.title = "Search"
         svc.tabBarItem.image = UIImage(named: "quick-look")
         return svc
+    }
+    
+    @IBAction func runSearch(_ sender: Any) {
+        let terms = searchField.text!
+        let alert = UIAlertController(title: "Searching", message: "Search terms: \(terms)") {
+        }
+        present(alert, animated: true, completion: nil)
+        
     }
 }

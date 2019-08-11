@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C6C11B422FCE5800084C406 /* posts-view-bright-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 0C6C11B322FCE5800084C406 /* posts-view-bright-light.css */; };
+		1ADFB9DF22FF4939004C9D55 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADFB9DE22FF4939004C9D55 /* SearchViewController.swift */; };
+		1ADFB9E122FF4D7F004C9D55 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADFB9E022FF4D7F004C9D55 /* Search.storyboard */; };
 		1C0060A3217025A600E5329A /* HTMLRenderingHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0060A2217025A600E5329A /* HTMLRenderingHelperTests.swift */; };
 		1C0060A52170347300E5329A /* HTMLReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0060A42170347300E5329A /* HTMLReader.swift */; };
 		1C0060AA217171CD00E5329A /* profile.css in Resources */ = {isa = PBXBuildFile; fileRef = 1C0060A8217171CD00E5329A /* profile.css */; };
@@ -675,6 +677,8 @@
 /* Begin PBXFileReference section */
 		0C6C11B322FCE5800084C406 /* posts-view-bright-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "posts-view-bright-light.css"; sourceTree = "<group>"; };
 		17772A1C53EBF44D059D4CD0 /* Pods-Awful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awful.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Awful/Pods-Awful.release.xcconfig"; sourceTree = "<group>"; };
+		1ADFB9DE22FF4939004C9D55 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		1ADFB9E022FF4D7F004C9D55 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		1C0060A2217025A600E5329A /* HTMLRenderingHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLRenderingHelperTests.swift; sourceTree = "<group>"; };
 		1C0060A42170347300E5329A /* HTMLReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLReader.swift; sourceTree = "<group>"; };
 		1C0060A7217171CD00E5329A /* profile.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = profile.less; sourceTree = "<group>"; };
@@ -1402,6 +1406,15 @@
 				1C9AEBC3210C3B2200C9A567 /* AwfulTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1ADFB9DD22FF48FD004C9D55 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1ADFB9DE22FF4939004C9D55 /* SearchViewController.swift */,
+				1ADFB9E022FF4D7F004C9D55 /* Search.storyboard */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		1C0060A6217171CD00E5329A /* Stylesheets */ = {
@@ -2188,6 +2201,7 @@
 		1CD005CD1BB734C900232FFD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1ADFB9DD22FF48FD004C9D55 /* Search */,
 				1C40D4A91A85F57400D9F793 /* AcknowledgementsViewController.swift */,
 				1C6821A81F113A760083F204 /* AnnouncementViewController.swift */,
 				1C16FBB11CB86ACD00C88BD1 /* EmptyViewController.swift */,
@@ -3110,6 +3124,7 @@
 				1C502D391F817004001890AF /* AppIcon-getout-40x40.png in Resources */,
 				1C502D131F816FF3001890AF /* AppIcon-Bars2-20x20.png in Resources */,
 				7BF090342022C7570060BDC8 /* AppIcon-v_dark-60x60@3x.png in Resources */,
+				1ADFB9E122FF4D7F004C9D55 /* Search.storyboard in Resources */,
 				1CC362CA204C527700274E82 /* AppIcon-doggo-76x76.png in Resources */,
 				7BF3A61D1F92FA86009F8603 /* AppIcon-greenface-60x60@3x.png in Resources */,
 				1C502D1E1F816FF3001890AF /* AppIcon-Bars2-60x60@3x.png in Resources */,
@@ -3678,6 +3693,7 @@
 				1C8F67F4222105E4007E61ED /* StencilEnvironment.swift in Sources */,
 				1C23C7051A7AB8940089BD5C /* SlopButton.swift in Sources */,
 				1CBE1B1219CAAFA200510187 /* AwfulSplitViewController.swift in Sources */,
+				1ADFB9DF22FF4939004C9D55 /* SearchViewController.swift in Sources */,
 				1C16FBBA1CB8961F00C88BD1 /* ImageURLProtocol.swift in Sources */,
 				1C09BFF21A09F86A007C11F5 /* InAppActionCollectionView.swift in Sources */,
 				1C48538E1F93BADF0042531A /* HTMLRenderingHelpers.swift in Sources */,

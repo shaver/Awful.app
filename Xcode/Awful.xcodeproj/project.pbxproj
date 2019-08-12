@@ -10,6 +10,7 @@
 		0C6C11B422FCE5800084C406 /* posts-view-bright-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 0C6C11B322FCE5800084C406 /* posts-view-bright-light.css */; };
 		1ADFB9DF22FF4939004C9D55 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADFB9DE22FF4939004C9D55 /* SearchViewController.swift */; };
 		1ADFB9E122FF4D7F004C9D55 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADFB9E022FF4D7F004C9D55 /* Search.storyboard */; };
+		1ADFB9E82301DDCB004C9D55 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADFB9E72301DDCB004C9D55 /* SearchResultsViewController.swift */; };
 		1C0060A3217025A600E5329A /* HTMLRenderingHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0060A2217025A600E5329A /* HTMLRenderingHelperTests.swift */; };
 		1C0060A52170347300E5329A /* HTMLReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0060A42170347300E5329A /* HTMLReader.swift */; };
 		1C0060AA217171CD00E5329A /* profile.css in Resources */ = {isa = PBXBuildFile; fileRef = 1C0060A8217171CD00E5329A /* profile.css */; };
@@ -679,6 +680,7 @@
 		17772A1C53EBF44D059D4CD0 /* Pods-Awful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awful.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Awful/Pods-Awful.release.xcconfig"; sourceTree = "<group>"; };
 		1ADFB9DE22FF4939004C9D55 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1ADFB9E022FF4D7F004C9D55 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		1ADFB9E72301DDCB004C9D55 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		1C0060A2217025A600E5329A /* HTMLRenderingHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLRenderingHelperTests.swift; sourceTree = "<group>"; };
 		1C0060A42170347300E5329A /* HTMLReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLReader.swift; sourceTree = "<group>"; };
 		1C0060A7217171CD00E5329A /* profile.less */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = profile.less; sourceTree = "<group>"; };
@@ -1413,6 +1415,7 @@
 			children = (
 				1ADFB9DE22FF4939004C9D55 /* SearchViewController.swift */,
 				1ADFB9E022FF4D7F004C9D55 /* Search.storyboard */,
+				1ADFB9E72301DDCB004C9D55 /* SearchResultsViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -3807,6 +3810,7 @@
 				1CC6645D220D224C00BEF5A6 /* Environment.swift in Sources */,
 				1C8F6807222B6DD9007E61ED /* ThreadTagDataLoader.swift in Sources */,
 				1C16FBC21CB9525B00C88BD1 /* NewThreadFieldView.swift in Sources */,
+				1ADFB9E82301DDCB004C9D55 /* SearchResultsViewController.swift in Sources */,
 				1C353C091E41832600CCBA51 /* CoreAnimation.swift in Sources */,
 				1C397C9B1BCC333D00CA7FD5 /* ResourceURLProtocol.swift in Sources */,
 				1C0060A52170347300E5329A /* HTMLReader.swift in Sources */,

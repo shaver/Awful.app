@@ -11,10 +11,11 @@ private let Log = Logger.get()
 final class SearchViewController: ViewController {
     @IBOutlet weak var searchField: UITextView!
     @IBOutlet weak var searchButton: UIButton!
+
+    private var loadingView: LoadingView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     class func newFromStoryboard() -> SearchViewController {
@@ -23,12 +24,13 @@ final class SearchViewController: ViewController {
         svc.tabBarItem.image = UIImage(named: "quick-look")
         return svc
     }
-    
+
     @IBAction func runSearch(_ sender: Any) {
-        let terms = searchField.text!
-        let alert = UIAlertController(title: "Searching", message: "Search terms: \(terms)") {
-        }
-        present(alert, animated: true, completion: nil)
-        
+        performSegue(withIdentifier: "ShowResultsSegue", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultsVC: SearchResultsViewController = segue.destination as! SearchResultsViewController
+        resultsVC.searchTerms = searchField.text
     }
 }

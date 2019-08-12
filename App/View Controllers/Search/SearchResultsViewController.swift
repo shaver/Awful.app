@@ -3,6 +3,9 @@
 //  Copyright 2019 Awful Contributors. CC BY-NC-SA 3.0 US https://github.com/Awful/Awful.app
 
 import UIKit
+import AwfulCore
+
+private let Log = Logger.get()
 
 class SearchResultsViewController: UIViewController {
     var searchTerms: String = ""
@@ -12,7 +15,16 @@ class SearchResultsViewController: UIViewController {
         super.viewDidLoad()
         
         searchTermsLabel.text = searchTerms
-        // Do any additional setup after loading the view.
+
+        ForumsClient.shared.fetchSearchResults(searchTerms: searchTerms).promise
+        .done { blurbs in
+            blurbs.forEach { blurb in
+                Log.w(blurb)
+            }
+        }
+        .catch { err in
+            Log.e(err.localizedDescription)
+        }
     }
 
     @IBAction func onCloseButton(_ sender: Any) {

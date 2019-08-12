@@ -442,6 +442,30 @@ public final class ForumsClient {
         fileprivate let postIcons: PostIconListScrapeResult
     }
 
+    /// - Returns: The promise of the search result blurbs as HTML
+    public func fetchSearchResults(searchTerms: String) ->
+        CancellablePromise<[String]> {
+            let (response, cancellable) = fetch(method: .post, urlString: "query.php", parameters: [
+                "action": "query",
+                "q": searchTerms])
+
+            let results = response
+                .map(on: .global(), parseHTML)
+                .map(on: .global(), { parsed -> [String] in
+                    guard let resultList = parsed.document.firstNode(matchingSelector: "ul#search_results")
+                        else {
+                            throw NSError(domain: AwfulCoreError.domain, code: AwfulCoreError.parseError)
+                    }
+
+                    let resultItems = resultList.nodes(matchingSelector: "li.search_result")
+                    return resultItems.map( {
+                        $0.firstNode(matchingSelector: ".blurb")?.textContent ?? ""
+                    })
+                })
+
+            return (results, cancellable)
+    }
+
     /// - Returns: The promise of the previewed post's HTML.
     public func previewOriginalPostForThread(in forum: Forum, bbcode: String) -> CancellablePromise<(previewHTML: String, formData: PostNewThreadFormData)> {
         let (previewForm, cancellable) = fetch(method: .get, urlString: "newthread.php", parameters: [

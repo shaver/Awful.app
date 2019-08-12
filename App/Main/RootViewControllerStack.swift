@@ -48,7 +48,7 @@ final class RootViewControllerStack: NSObject, UISplitViewControllerDelegate {
         search.restorationIdentifier = "Search"
 
         tabBarController.restorationIdentifier = "Tabbar"
-        tabBarController.viewControllers = [forums, bookmarks, lepers, search, settings].map() {
+        tabBarController.viewControllers = [forums, bookmarks, search, lepers, settings].map() {
             let navigationController = $0.enclosingNavigationController
             
             // We want the root navigation controllers to preserve their state, but we want to provide the restored instance ourselves.

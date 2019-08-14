@@ -70,6 +70,10 @@ once upon a time
         let result = searchResults[indexPath.row]
         cell.threadTitleLabel.text = result.threadTitle
         cell.postSnippetLabel.text = result.snippet
+        cell.postSnippetLabel.sizeToFit()
+
+        let snippetFrame = cell.postSnippetLabel.frame
+        cell.postSnippetLabel.frame = CGRect(x: snippetFrame.minX, y: snippetFrame.minY, width: cell.frame.width, height: min(snippetFrame.height, cell.frame.height - cell.threadTitleLabel.frame.height))
 
         return cell
     }

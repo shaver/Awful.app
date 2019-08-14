@@ -7,14 +7,35 @@ import AwfulCore
 
 private let Log = Logger.get()
 
-class SearchResultsViewController: UIViewController {
+class SearchResultsViewController: UIViewController, UITableViewDataSource {
+
+    //MARK: Properties
+    var searchResults = [(threadTitle: String, snippet: String)]()
     var searchTerms: String = ""
     @IBOutlet weak var searchTermsLabel: UILabel!
+    @IBOutlet weak var searchResultsTable: UITableView!
     
+    private func loadSampleResults() {
+        let result1 = ("Big Title", """
+once upon a time
+once upon a time
+once upon a time
+once upon a time
+once upon a time
+once upon a time
+""")
+        let result2 = ("Strong Title", "several upon a time")
+        let result3 = ("Fast Title", "never, actually")
+
+        searchResults += [result1, result2, result3]
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadSampleResults()
         searchTermsLabel.text = searchTerms
+        searchResultsTable.dataSource = self
 
         ForumsClient.shared.fetchSearchResults(searchTerms: searchTerms).promise
         .done { blurbs in
@@ -30,14 +51,27 @@ class SearchResultsViewController: UIViewController {
     @IBAction func onCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Table view data source
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchResults.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultsSnippetCell", for: indexPath) as? SearchResultSnippetCell else {
+            fatalError("got a cell that isn't SearchResultsSnippetCell?")
+        }
+
+        let result = searchResults[indexPath.row]
+        cell.threadTitleLabel.text = result.threadTitle
+        cell.postSnippetLabel.text = result.snippet
+
+        return cell
+    }
 
 }

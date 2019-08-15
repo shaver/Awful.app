@@ -51,8 +51,10 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource {
         }
 
         let result = searchResults[indexPath.row]
-        cell.threadTitleLabel.text = result.thread
+        cell.threadTitleLabel.text = result.threadTitle
         cell.postSnippetLabel.text = result.snippet
+        cell.authorNameLabel.text = result.author
+        cell.forumNameLabel.text = result.forumName
         cell.postSnippetLabel.sizeToFit()
 
         let snippetFrame = cell.postSnippetLabel.frame

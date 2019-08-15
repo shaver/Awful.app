@@ -438,7 +438,10 @@ public final class ForumsClient {
     }
 
     public struct SearchResult {
-        public let thread: String
+        public let threadTitle: String
+        public let postURL: String
+        public let forumName: String
+        public let author: String
         public let snippet: String
     }
 
@@ -459,7 +462,11 @@ public final class ForumsClient {
 
                     let resultItems = resultList.nodes(matchingSelector: "li.search_result")
                     return resultItems.map( {
-                        SearchResult(thread: $0.firstNode(matchingSelector: ".threadtitle")?.textContent ?? "",
+                        let title = $0.firstNode(matchingSelector: ".threadtitle")
+                        return SearchResult(threadTitle: title?.textContent ?? "",
+                                     postURL: title?.attributes["href"] ?? "",
+                                     forumName: $0.firstNode(matchingSelector: ".forumtitle")?.textContent ?? "",
+                                     author: $0.firstNode(matchingSelector: ".username")?.textContent ?? "<unknown>",
                                      snippet: $0.firstNode(matchingSelector: ".blurb")?.textContent ?? "")
                     })
                 })

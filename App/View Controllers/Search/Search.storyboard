@@ -87,18 +87,42 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="370" translatesAutoresizingMaskIntoConstraints="NO" id="mvT-6o-ebO" userLabel="Snippet Text">
-                                                            <rect key="frame" x="-2" y="30" width="368" height="112"/>
+                                                            <rect key="frame" x="0.0" y="43" width="370" height="91"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <string key="text">Sample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet Text</string>
                                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shitposter IV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydR-Sy-IvK" userLabel="Author Name">
+                                                            <rect key="frame" x="0.0" y="30" width="130" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GBS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfY-EU-xYp" userLabel="Forum Name">
+                                                            <rect key="frame" x="130" y="30" width="90" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="02/17/1977 18:05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1P-uT-Z9L" userLabel="Timestamp">
+                                                            <rect key="frame" x="230" y="30" width="150" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="authorNameLabel" destination="ydR-Sy-IvK" id="IVO-cC-qBf"/>
+                                                    <outlet property="forumNameLabel" destination="zfY-EU-xYp" id="gdA-ZT-sZG"/>
                                                     <outlet property="postSnippetLabel" destination="mvT-6o-ebO" id="ggW-w1-nf7"/>
                                                     <outlet property="threadTitleLabel" destination="ISe-nO-nAm" id="nNb-eW-Fzd"/>
+                                                    <outlet property="timestampLabel" destination="R1P-uT-Z9L" id="7Ma-L5-gd0"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

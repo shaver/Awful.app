@@ -8,7 +8,10 @@ class SearchResultSnippetCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var threadTitleLabel: UILabel!
     @IBOutlet weak var postSnippetLabel: UILabel!
-
+    @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var forumNameLabel: UILabel!
+    @IBOutlet weak var timestampLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

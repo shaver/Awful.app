@@ -87,7 +87,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="370" translatesAutoresizingMaskIntoConstraints="NO" id="mvT-6o-ebO" userLabel="Snippet Text">
-                                                            <rect key="frame" x="1" y="30" width="369" height="120"/>
+                                                            <rect key="frame" x="-2" y="30" width="368" height="112"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <string key="text">Sample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet TextSample Thread Snippet Text</string>
                                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>

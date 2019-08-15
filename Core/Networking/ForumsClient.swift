@@ -437,21 +437,21 @@ public final class ForumsClient {
         }
     }
 
-    public struct PostNewThreadFormData {
-        fileprivate let form: Form
-        fileprivate let postIcons: PostIconListScrapeResult
+    public struct SearchResult {
+        public let thread: String
+        public let snippet: String
     }
 
     /// - Returns: The promise of the search result blurbs as HTML
     public func fetchSearchResults(searchTerms: String) ->
-        CancellablePromise<[String]> {
+        CancellablePromise<[SearchResult]> {
             let (response, cancellable) = fetch(method: .post, urlString: "query.php", parameters: [
                 "action": "query",
                 "q": searchTerms])
 
             let results = response
                 .map(on: .global(), parseHTML)
-                .map(on: .global(), { parsed -> [String] in
+                .map(on: .global(), { parsed -> [SearchResult] in
                     guard let resultList = parsed.document.firstNode(matchingSelector: "ul#search_results")
                         else {
                             throw NSError(domain: AwfulCoreError.domain, code: AwfulCoreError.parseError)
@@ -459,11 +459,17 @@ public final class ForumsClient {
 
                     let resultItems = resultList.nodes(matchingSelector: "li.search_result")
                     return resultItems.map( {
-                        $0.firstNode(matchingSelector: ".blurb")?.textContent ?? ""
+                        SearchResult(thread: $0.firstNode(matchingSelector: ".threadtitle")?.textContent ?? "",
+                                     snippet: $0.firstNode(matchingSelector: ".blurb")?.textContent ?? "")
                     })
                 })
 
             return (results, cancellable)
+    }
+
+    public struct PostNewThreadFormData {
+        fileprivate let form: Form
+        fileprivate let postIcons: PostIconListScrapeResult
     }
 
     /// - Returns: The promise of the previewed post's HTML.

@@ -10,38 +10,21 @@ private let Log = Logger.get()
 class SearchResultsViewController: UIViewController, UITableViewDataSource {
 
     //MARK: Properties
-    var searchResults = [(threadTitle: String, snippet: String)]()
+    var searchResults = [ForumsClient.SearchResult]()
     var searchTerms: String = ""
     @IBOutlet weak var searchTermsLabel: UILabel!
     @IBOutlet weak var searchResultsTable: UITableView!
     
-    private func loadSampleResults() {
-        let result1 = ("Big Title", """
-once upon a time
-once upon a time
-once upon a time
-once upon a time
-once upon a time
-once upon a time
-""")
-        let result2 = ("Strong Title", "several upon a time")
-        let result3 = ("Fast Title", "never, actually")
-
-        searchResults += [result1, result2, result3]
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadSampleResults()
         searchTermsLabel.text = searchTerms
         searchResultsTable.dataSource = self
 
         ForumsClient.shared.fetchSearchResults(searchTerms: searchTerms).promise
-        .done { blurbs in
-            blurbs.forEach { blurb in
-                Log.w(blurb)
-            }
+        .done { results in
+            self.searchResults = results
+            self.searchResultsTable.reloadData()
         }
         .catch { err in
             Log.e(err.localizedDescription)
@@ -68,7 +51,7 @@ once upon a time
         }
 
         let result = searchResults[indexPath.row]
-        cell.threadTitleLabel.text = result.threadTitle
+        cell.threadTitleLabel.text = result.thread
         cell.postSnippetLabel.text = result.snippet
         cell.postSnippetLabel.sizeToFit()
 
